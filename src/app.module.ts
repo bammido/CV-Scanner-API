@@ -1,11 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { GeminiModule } from './integrations/gemini/gemini.module';
-import { MulterModule } from '@nestjs/platform-express';
+import { ApiModule } from './api/api.module';
 
 @Module({
-  imports: [GeminiModule, MulterModule.register({ dest: './uploads' })],
+  imports: [ApiModule],
   controllers: [AppController],
   providers: [AppService],
 })
