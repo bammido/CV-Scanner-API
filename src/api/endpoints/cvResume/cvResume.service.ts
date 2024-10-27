@@ -12,16 +12,19 @@ export class CVResumeService {
       mimeType: 'application/pdf',
     });
 
-    console.log(upload);
-
     const response = await this.geminiService.generateContent({
       upload,
       text: cvScannerPrompt,
     });
 
-    console.log(response.response.text());
+    const responseText = response.response
+      .text()
+      .replaceAll('`', '')
+      .replaceAll('json', '');
 
-    return response.response.text();
+    const responseJSON = JSON.parse(responseText);
+
+    return responseJSON;
   }
 
   getHello(): string {
