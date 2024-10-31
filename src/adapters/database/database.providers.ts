@@ -16,5 +16,7 @@ export const databaseProviders = [
 
       return dataSource.initialize();
     },
+    autoLoadEntities: true,
+    synchronize: true,
   },
 ];
