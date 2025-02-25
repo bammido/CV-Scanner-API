@@ -68,7 +68,7 @@ export class CVResumeService {
             continue;
           }
 
-          return InternalServerErrorException;
+          return new InternalServerErrorException();
         }
       }
     } finally {
