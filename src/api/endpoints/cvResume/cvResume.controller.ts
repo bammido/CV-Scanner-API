@@ -1,10 +1,10 @@
 import {
   Controller,
-  Get,
+  // Get,
   Post,
   UploadedFile,
   UseInterceptors,
-  Param,
+  // Param,
 } from '@nestjs/common';
 import { CVResumeService } from './cvResume.service';
 import { FileInterceptor } from '@nestjs/platform-express';
@@ -17,11 +17,12 @@ export class CVResumeController {
   @UseInterceptors(FileInterceptor('file'))
   async uploadFile(@UploadedFile() file: Express.Multer.File) {
     const filePath = file.path;
-    return await this.cvResumeService.uploadFile({ filePath });
+    const filename = file.filename;
+    return await this.cvResumeService.uploadFile({ filePath, filename });
   }
 
-  @Get('/:idToken')
-  async teste(@Param('idToken') idToken) {
-    return await this.cvResumeService.teste({ idToken });
-  }
+  // @Get('/:idToken')
+  // async teste(@Param('idToken') idToken) {
+  //   return await this.cvResumeService.teste({ idToken });
+  // }
 }
