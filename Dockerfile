@@ -5,4 +5,4 @@ RUN npm i
 COPY . .
 RUN npm run build
 EXPOSE 8080
-CMD ["npm", "start:docker"]
+CMD ["npm", "start"]
