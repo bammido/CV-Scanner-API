@@ -59,6 +59,5 @@ const cvResumeJson = {
 };
 
 const teste = JSON.stringify(cvResumeJson);
-console.log(teste);
 
 export const cvScannerPrompt = `Analisar o seguinte currículo e fornecer uma avaliação detalhada, seguindo o formato JSON abaixo. Para cada categoria, atribua uma pontuação de 1 a 10 e inclua uma observação descritiva. Preciso que ertorne somente o json sem nenhuma pontuação a mais nem plavras a mais. ${teste}. o score vai de 1 a 10, observation é a descrição e o value é um boolean que se caso foi possível avaliar esse requisito.`;

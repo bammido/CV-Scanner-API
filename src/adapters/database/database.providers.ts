@@ -1,8 +1,6 @@
 import { isProd } from 'src/constants/isProdEnvironment';
 import { DataSource } from 'typeorm';
 
-console.log(isProd)
-
 const dataSource = new DataSource({
   type: 'postgres',
   host: process.env.DB_HOST || 'localhost',
